@@ -23,6 +23,7 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a id="mostrarCalc">Calculadora</a></li>
                 <li><a id="mostrarContr">controles-prenatales</a></li>
+                <li><a id="mostrarInfo">controles-prenatales</a></li>
             </ul>
         </div>
     </nav>
@@ -30,6 +31,7 @@
     <ul class="sidenav" id="mobile-demo">
         <li><a id="mostrarCalc1">Calculadora</a></li>
         <li><a id="mostrarContr1">controles-prenatales</a></li>
+        <li><a id="mostrarInfo1">controles-prenatales</a></li>
     </ul>
 
     <main class="container">
@@ -95,8 +97,19 @@
             <h2>Controles prenatales por trimestre</h2>
             <p>Primer trimestre del embarazo
                 Es el período comprendido entre la semana 6 y la semana 12 del embarazo, y donde tendrá lugar el primer control prenatal de la mujer. Es un control de gran importancia, debido a que las primeras semanas del embarazo son el momento perfecto para establecer los correctivos necesarios en la salud de la madre y en el desarrollo de su hijo. Los aspectos que se evalúan en este tipo de consultas médicas son los siguientes:</p>
-
         </div>
+
+        <div id="info" style="display: none; text-align: justify">
+            <h2>Los factores de riesgo en el embarazo: </h2>
+            <p>en este caso el médico evaluará la edad de la madre, los hábitos pocos saludables como el alcohol y el tabaco, además de evaluar si existen antecedentes de consumo de drogas.</p>
+            <h2>Antecedentes médicos personales:</h2>
+            <p>se refiere a las patologías preexistentes en la madre. Las más conocidas son la diabetes, el hipotiroidismo, enfermedades cardíacas, respiratorias, renales, infecciones del tracto urinario, enfermedades de transmisión sexual, entre otras.</p>
+            <h2>Antecedentes médicos familiares: </h2>
+            <p>se trata de todas aquellas enfermedades importantes que padezcan los familiares cercanos de la madre, que puedan influir en la genética y posterior desarrollo del bebé. En este aspecto también se toman en cuenta las cirugías que se haya hecho la madre previa al embarazo.</p>
+            <h2>Antecedentes obstétricos:</h2>
+            <p>es el historial médico de la madre en cuanto a los embarazos previos, cirugías obstétricas, si existieron abortos o complicaciones en embarazos anteriores, tratamientos por esterilidad u otras enfermedades.</p>
+        </div>
+
 
     </main>
 
@@ -184,30 +197,49 @@
 
         $('#mostrarCalc').click(function() {
             $('#home').hide('slow');
+            $('#info').hide('slow');
             $('#calculadora').show('slow');
+            $('#controlPre').hide('slow');
+        });
+
+         $('#mostrarInfo').click(function() {
+            $('#info').show('slow');
+            $('#home').hide('slow');
+            $('#calculadora').hide('slow');
             $('#controlPre').hide('slow');
         });
 
         $('#mostrarContr').click(function() {
             $('#home').hide('slow');
+            $('#info').hide('slow');
             $('#controlPre').show('slow');
             $('#calculadora').hide('slow')
         });
 
          $('#mostrarCalc1').click(function() {
             $('#home').hide('slow');
+            $('#info').hide('slow');
             $('#calculadora').show('slow');
+            $('#controlPre').hide('slow');
+        });
+
+        $('#mostrarInfo1').click(function() {
+            $('#info').show('slow');
+            $('#home').hide('slow');
+            $('#calculadora').hide('slow');
             $('#controlPre').hide('slow');
         });
 
         $('#mostrarContr1').click(function() {
             $('#home').hide('slow');
+            $('#info').hide('slow');
             $('#controlPre').show('slow');
             $('#calculadora').hide('slow')
         });
 
         $('#inicio').click(function () {
             $('#home').show('slow');
+            $('#info').hide('slow');
             $('#controlPre').hide('slow');
             $('#calculadora').hide('slow')
         });
