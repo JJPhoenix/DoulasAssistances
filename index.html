@@ -24,6 +24,7 @@
                 <li><a id="mostrarCalc">Calculadora</a></li>
                 <li><a id="mostrarContr">controles-prenatales</a></li>
                 <li><a id="mostrarInfo">Info</a></li>
+                <li><a id="mostrarEnfe">Enferedades</a></li>
             </ul>
         </div>
     </nav>
@@ -32,6 +33,7 @@
         <li><a id="mostrarCalc1">Calculadora</a></li>
         <li><a id="mostrarContr1">controles-prenatales</a></li>
         <li><a id="mostrarInfo1">Info</a></li>
+        <li><a id="mostrarEnfe1">Enferedades</a></li>
     </ul>
 
     <main class="container">
@@ -131,6 +133,18 @@
 
         </div>
 
+        <div id="enfer" style="display: none; text-align: justify">
+            <h2>El embarazo y diabetes</h2>
+            <p>ntroducción
+                Si usted tiene diabetes, el mejor momento para controlar su nivel de glucosa en sangre, también denominado nivel de azúcar en sangre, es antes de quedar embarazada. Los niveles altos de glucosa en sangre pueden ser perjudiciales para su bebé durante las primeras semanas de embarazo, incluso antes de saber que está embarazada. Los objetivos de nivel de glucosa en sangre son diferentes para las mujeres que están intentando quedar embarazadas. Los objetivos son valores a los que usted apunta.
+
+                El embarazo y la nueva maternidad son momentos de gran conmoción y cambio para cualquier mujer. Si usted tiene diabetes tipo 1 o 2 y desea quedar embarazada pronto, puede aprender qué debe hacer para tener un bebé sano. También puede aprender cómo cuidar su salud y su diabetes antes y después de su embarazo, y durante este. Si tiene diabetes y ya está embarazada, ¡no entre en pánico! Simplemente asegúrese de estar haciendo todo lo posible para cuidar su salud y su diabetes durante su embarazo.</p>
+            <h2>
+                Para las mujeres con diabetes gestacional
+            </h2>
+
+            <p>La diabetes gestacional se relaciona a los cambios hormonales que se presentan durante el embarazo, adicional a ello la resistencia a la insulina propia del embarazo y los malos hábitos alimenticios pueden conducir a una diabetes gestacional Si tiene diabetes, su embarazo se considera de alto riesgo, lo que significa que tiene un mayor riesgo de tener problemas durante su embarazo. Debe prestar especial atención a su salud y es posible que deba ver médicos que se especialicen en tratar la diabetes o sus complicaciones. En millones de embarazos de alto riesgo, como aquellos de mujeres mayores de 35 años o con dos o más bebés, los bebés son perfectamente sanos y no afectan la salud de la madre.</p>
+        </div>
 
     </main>
 
@@ -217,6 +231,7 @@
         });
 
         $('#mostrarCalc').click(function() {
+        $('#enfer').hide('slow');
             $('#home').hide('slow');
             $('#info').hide('slow');
             $('#calculadora').show('slow');
@@ -224,6 +239,7 @@
         });
 
          $('#mostrarInfo').click(function() {
+         $('#enfer').hide('slow');
             $('#info').show('slow');
             $('#home').hide('slow');
             $('#calculadora').hide('slow');
@@ -231,6 +247,7 @@
         });
 
         $('#mostrarContr').click(function() {
+            $('#enfer').hide('slow');
             $('#home').hide('slow');
             $('#info').hide('slow');
             $('#controlPre').show('slow');
@@ -238,6 +255,7 @@
         });
 
          $('#mostrarCalc1').click(function() {
+         $('#enfer').hide('slow');
             $('#home').hide('slow');
             $('#info').hide('slow');
             $('#calculadora').show('slow');
@@ -245,6 +263,7 @@
         });
 
         $('#mostrarInfo1').click(function() {
+        $('#enfer').hide('slow');
             $('#info').show('slow');
             $('#home').hide('slow');
             $('#calculadora').hide('slow');
@@ -252,6 +271,7 @@
         });
 
         $('#mostrarContr1').click(function() {
+        $('#enfer').hide('slow');
             $('#home').hide('slow');
             $('#info').hide('slow');
             $('#controlPre').show('slow');
@@ -259,11 +279,29 @@
         });
 
         $('#inicio').click(function () {
+        $('#enfer').hide('slow');
             $('#home').show('slow');
             $('#info').hide('slow');
             $('#controlPre').hide('slow');
             $('#calculadora').hide('slow')
         });
+
+         $('#mostrarEnfe').click(function () {
+        $('#enfer').hide('slow');
+            $('#home').show('slow');
+            $('#info').hide('slow');
+            $('#controlPre').hide('slow');
+            $('#calculadora').hide('slow')
+        });
+
+         $('#mostrarEnfe1').click(function () {
+        $('#enfer').hide('slow');
+            $('#home').show('slow');
+            $('#info').hide('slow');
+            $('#controlPre').hide('slow');
+            $('#calculadora').hide('slow')
+        });
+
 
         function stringToDate(_date,_format,_delimiter)
         {
