@@ -19,40 +19,61 @@
         <div class="nav-wrapper">
             <img src="media/icono.png" class="brand-logo" style="margin: 0; display: inline-block; height: 60px; float: none">
             <a href="#!" class="brand-logo">DoulasAssistances</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="mostrarCalc">Calculadora</a></li>
+                <li><a id="mostrarContr">controles-prenatales</a></li>
+            </ul>
         </div>
     </nav>
 
     <main class="container">
         <!-- Page Layout here -->
-        <div class="row">
-            <h1>Nuestra Calculadora de Fecha de Parto es muy fácil</h1>
-        </div>
-        <div class="row">
-            <div class="col s12 ">
-                <div class="card pink">
-                    <div class="card-content white-text">
-                        <span class="card-title" style="text-align: center">Nuestra Calculadora de Fecha de Parto es muy fácil:</span>
-                        <p style="text-align: justify">Coloque la fecha del primer día de su última menstruación en la casilla exactamente en el formato día/mes/año, por ejemplo: 28/4/2011.
-                            Presione el botón que dice Calcular Fecha de Parto y Embarazada.com le ayudará a calcular su Fecha Probable de Parto y la Edad Gestacional.</p>
+        <div id="calculadora" style="display: none">
+            <div class="row">
+                <h1>Nuestra Calculadora de Fecha de Parto es muy fácil</h1>
+            </div>
+            <div class="row">
+                <div class="col s12 ">
+                    <div class="card pink">
+                        <div class="card-content white-text">
+                            <span class="card-title" style="text-align: center">Nuestra Calculadora de Fecha de Parto es muy fácil:</span>
+                            <p style="text-align: justify">Coloque la fecha del primer día de su última menstruación en la casilla exactamente en el formato día/mes/año, por ejemplo: 28/4/2011.
+                                Presione el botón que dice Calcular Fecha de Parto y Embarazada.com le ayudará a calcular su Fecha Probable de Parto y la Edad Gestacional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col s6 offset-s3">
+                        <input type="text" class="datepicker" placeholder="Fecha de ultima Mestruación" id="fechaMes">
+                    </div>
+                    <div class="col s6 offset-s5">
+                        <a class="waves-effect waves-light btn" id="calcular">Calcular</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 offset-s3" style=" text-align: center">
+                        <h3 id="fechCalc" style="display: none;" ></h3>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="row">
-                <div class="col s6 offset-s3">
-                    <input type="text" class="datepicker" placeholder="Fecha de ultima Mestruación" id="fechaMes">
-                </div>
-                <div class="col s6 offset-s5">
-                    <a class="waves-effect waves-light btn" id="calcular">Calcular</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s6 offset-s3" style=" text-align: center">
-                    <h3 id="fechCalc" style="display: none;" ></h3>
-                </div>
-            </div>
+        <div id="controlPre" style="display: none">
+            <p>Las mujeres embarazas tienen el deber de asistir a controles médicos periódicamente con la finalidad de que el médico especialista pueda determinar el estado del embarazo y asegurarse de que todo este marchando correctamente tanto para la madre como para el bebé. Este tipo de evaluaciones se conocen con el nombre de controles prenatales o durante el embarazo, y en esta oportunidad te explicaremos todo lo que necesitas saber sobre este importante tema.
+
+                Experto: Víctor Rubio Arancibia, jefe del Departamento de Gineco-Obstetricia de Clínica Indisa.</p>
+            <h2>
+                ¿Qué son los controles prenatales?
+            </h2>
+            <p>Los controles prenatales son evaluaciones periódicas de la embarazada por parte de profesionales especializados, para la mejor vigilancia de la evolución de la gestación.</p>
+            <h2>Finalidad e importancia de los controles prenatales o estudios durante el embarazo</h2>
+            <p>Desde un punto de vista clínico, los controles prenatales representan un sistema bien estructurado de consultas médicas, con la finalidad principal de evaluar la progresión del embarazo a través de exámenes de laboratorios y estudios especiales como la ecosonografía. Estos estudios a su vez permiten descubrir la aparición de problemas que puedan surgir con la madre y el bebé, que normalmente se presentan en un porcentaje de los casos no mayor al 20%.
+
+                Es por ello que resulta de gran importancia este tipo de controles durante el embarazo, ya que le permiten al especialista mantener conocimiento sobre la evolución del embarazo y preparar de la mejor manera a la madre para el momento del parto y para la crianza del bebé.
+
+                Los controles prenatales suelen realizarse durante el primer, segundo y tercer trimestre del embarazo, teniendo en cuenta que el médico puede requerir más controles si lo considera necesario para estar atento de cualquier contratiempo que pueda ocurrir</p>
         </div>
 
     </main>
@@ -138,6 +159,16 @@
             $('#fechCalc').show('slow').text(
                 "Felecidades!! Su bebe nacerá el : "+dia+"-"+mes+"-"+ year
             );
+        });
+
+        $('#mostrarCalc').click(function() {
+            $('#calculadora').show('slow');
+            $('#controlPre').hide('slow');
+        });
+
+        $('#mostrarContr').click(function() {
+            $('#controlPre').show('slow');
+            $('#calculadora').hide('slow')
         });
 
         function stringToDate(_date,_format,_delimiter)
