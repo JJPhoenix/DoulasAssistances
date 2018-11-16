@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DoulasAssistances</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="framework/materialize/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="app/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="framework/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="framework/materialize/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Navbar goes here -->
+    <nav class="pink">
+        <div class="nav-wrapper">
+            <img src="media/icono.png" class="brand-logo" style="margin: 0; display: inline-block; height: 60px; float: none">
+            <a href="#!" class="brand-logo">DoulasAssistances</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Page Layout here -->
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+            <div class="row">
+                <div class="col s6">
+                    <input type="text" class="datepicker" placeholder="Fecha de ultima Mestruación" id="fechaMes">
+                </div>
+                <div class="col s6">
+                    <a class="waves-effect waves-light btn" id="calcular">Calcular</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6 offset-s3">
+                    <h3 id="fechCalc" style="display: none;" ></h3>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="page-footer pink">
+        <div class="container">
+            <div class="row pink darken-1">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12 ">
+                    <h3 class="white-text">Alumnas</h3>
+                    <ul>
+                            <li>
+                                <h5>Jacinto Sánchez, Jhoselyn Victoria</h5>
+                            </li>
+                            <li>
+                                <h5>Jiménez León, Caroll Nicol</h5>
+                            </li>
+                            <li>
+                                <h5>Marcheno Ayala, Elizabeth Linda</h5>
+                            </li>
+                            <li>
+                                <h5>Mariño Carrasco, Aracely Leidy</h5>
+                            </li>
+                            <li>
+                                <h5>Medina Gloria, Leidy Marcela</h5>
+                            </li>
+                            <li>
+                                <h5>Molina Valerio, Mónica Nathaly</h5>
+                            </li>
+                            <li>
+                                <h5>Montenegro Infanzón, Maria José</h5>
+                            </li>
+                            <li>
+                                <h5>Navarro Izarra, Laura Isabel</h5>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright Universidad Nacional Mayor de San Marcos
+            </div>
+        </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    $(function () {
+
+        var fec = $('#fechaMes').datepicker({
+            format: 'dd-mm-yyyy'
+        });
+
+
+        $('#calcular').click(function () {
+            var fecha = stringToDate(fec.val(),'dd-mm-yyyy','-');
+            var dia= fecha.getDate()+7;
+            var mes= fecha.getMonth()-3;
+            var year= fecha.getFullYear()+1;
+            $('#fechCalc').show('slow').text(dia+"-"+mes+"-"+ year);
+        });
+
+        function stringToDate(_date,_format,_delimiter)
+        {
+            var formatLowerCase=_format.toLowerCase();
+            var formatItems=formatLowerCase.split(_delimiter);
+            var dateItems=_date.split(_delimiter);
+            var monthIndex=formatItems.indexOf("mm");
+            var dayIndex=formatItems.indexOf("dd");
+            var yearIndex=formatItems.indexOf("yyyy");
+            var month=parseInt(dateItems[monthIndex]);
+            var formatedDate = new Date(dateItems[yearIndex],month,dateItems[dayIndex]);
+            return formatedDate;
+        }
+
+    })
+
+
+
+</script>
