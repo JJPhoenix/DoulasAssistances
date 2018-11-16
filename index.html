@@ -239,11 +239,13 @@
 
         $('#calcular').click(function () {
             var fecha = stringToDate(fec.val(),'dd-mm-yyyy','-');
-            var dia= fecha.getDate()+7;
+            var dia= fecha.getDate();
+
+
             var mes= fecha.getMonth()-3;
             var year= fecha.getFullYear()+1;
             $('#fechCalc').show('slow').text(
-                "Felecidades!! Su bebe nacerá el : "+dia+"-"+mes+"-"+ year
+                "Felicidades!! Su bebe nacerá el : "+dia+"-"+mes+"-"+ year
             );
         });
 
