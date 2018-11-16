@@ -18,7 +18,7 @@
     <nav class="pink">
         <div class="nav-wrapper">
             <img src="media/icono.png" class="brand-logo" style="margin: 0; display: inline-block; height: 60px; float: none">
-            <a href="#!" class="brand-logo">DoulasAssistances</a>
+            <a id="inicio" class="brand-logo">DoulasAssistances</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a id="mostrarCalc">Calculadora</a></li>
                 <li><a id="mostrarContr">controles-prenatales</a></li>
@@ -174,12 +174,19 @@
         });
 
         $('#mostrarCalc').click(function() {
+            $('#home').hide('slow');
             $('#calculadora').show('slow');
             $('#controlPre').hide('slow');
         });
 
         $('#mostrarContr').click(function() {
+            $('#home').hide('slow');
             $('#controlPre').show('slow');
+            $('#calculadora').hide('slow')
+        });
+        $('#inicio').click(function () {
+            $('#home').show('slow');
+            $('#controlPre').hide('slow');
             $('#calculadora').hide('slow')
         });
 
