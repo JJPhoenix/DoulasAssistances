@@ -25,20 +25,31 @@
     <main class="container">
         <!-- Page Layout here -->
         <div class="row">
-
+            <h1>Nuestra Calculadora de Fecha de Parto es muy fácil</h1>
+        </div>
+        <div class="row">
+            <div class="col s12 ">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title" style="text-align: center">Nuestra Calculadora de Fecha de Parto es muy fácil:</span>
+                        <p style="text-align: justify">Coloque la fecha del primer día de su última menstruación en la casilla exactamente en el formato día/mes/año, por ejemplo: 28/4/2011.
+                            Presione el botón que dice Calcular Fecha de Parto y Embarazada.com le ayudará a calcular su Fecha Probable de Parto y la Edad Gestacional.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
             <div class="row">
-                <div class="col s6">
+                <div class="col s6 offset-s3">
                     <input type="text" class="datepicker" placeholder="Fecha de ultima Mestruación" id="fechaMes">
                 </div>
-                <div class="col s6">
+                <div class="col s6 offset-s5">
                     <a class="waves-effect waves-light btn" id="calcular">Calcular</a>
                 </div>
             </div>
             <div class="row">
-                <div class="col s6 offset-s3">
+                <div class="col s6 offset-s3" style=" text-align: center">
                     <h3 id="fechCalc" style="display: none;" ></h3>
                 </div>
             </div>
@@ -118,7 +129,9 @@
             var dia= fecha.getDate()+7;
             var mes= fecha.getMonth()-3;
             var year= fecha.getFullYear()+1;
-            $('#fechCalc').show('slow').text(dia+"-"+mes+"-"+ year);
+            $('#fechCalc').show('slow').text(
+                "Felecidades!! Su bebe nacerá el : "+dia+"-"+mes+"-"+ year
+            );
         });
 
         function stringToDate(_date,_format,_delimiter)
